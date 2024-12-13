@@ -4,7 +4,7 @@ db = SQLAlchemy()
 
 def init_db(app):
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'SQLite///:banco.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite///:banco.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     
     with app.app_context():
