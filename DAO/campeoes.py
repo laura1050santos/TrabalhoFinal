@@ -33,7 +33,7 @@ class CampeaoDAO:
             return e 
         
     @staticmethod
-    def update_Campeao(nome, dificuldade, lancamento, funcao, classe, regiao):
+    def update_Campeao(id,nome, dificuldade, lancamento, funcao, classe, regiao):
         try:
             campeao = CampeaoDAO.get_Campeao(id)
             campeao.nome = nome
