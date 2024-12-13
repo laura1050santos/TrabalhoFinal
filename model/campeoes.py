@@ -5,7 +5,7 @@ class Campeao(db.Model):
 
     id_campeao = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(100), nullable=False)
-    dificuldade = db.Column(db.String(50), nullable=False)
+    dificuldade = db.Column( db.String(50), unique=True, nullable=False)
     lancamento = db.Column(db.Date, nullable=False)
 
     id_funcao = db.Column(db.Integer, db.ForeignKey('funcoes.id_funcao'), nullable=False)

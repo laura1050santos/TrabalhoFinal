@@ -5,16 +5,16 @@ class CampeaoRepository:
         self.campeaoDAO = CampeaoDAO()
 
     def get_all_campeoes(self):
-        return self.campeaoDAO. get_all_campeoes()#pega a função do DAO
+        return self.campeaoDAO.get_all_campeoes()#pega a função do DAO
     
-    def get_campeao_by_id(self, campeao_id):
-        return self.campeaoDAO.get_Campeao(campeao_id)
+    def get_campeao_by_id(self, id_campeao):
+        return self.campeaoDAO.get_Campeao(id_campeao)
 
     def create_campeao(self, nome, dificuldade, lancamento, funcao, classe, regiao):
         return self.campeaoDAO.add_Campeao(nome, dificuldade, lancamento, funcao, classe, regiao)
 
-    def update_campeao(self, campeao_id, nome, classe, funcao):
-        return self.campeaoDAO.update_Campeao(campeao_id,nome, classe, funcao)
+    def update_campeao(self, id_campeao, nome, classe, funcao):
+        return self.campeaoDAO.update_Campeao(id_campeao,nome, classe, funcao)
 
-    def delete_user(self, campeao_id):
-        return self.campeaoDAO.delete_Campeao(campeao_id)
+    def delete_user(self, id_campeao):
+        return self.campeaoDAO.delete_Campeao(id_campeao)

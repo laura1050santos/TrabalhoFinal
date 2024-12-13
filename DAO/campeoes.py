@@ -2,7 +2,6 @@ from model import Campeao
 from database import db
 
 class CampeaoDAO:
-
     @staticmethod
     def get_Campeao(id):
         return Campeao.query.get(id)
@@ -21,6 +20,7 @@ class CampeaoDAO:
         except Exception as e:
             db.session.rollback()
             return e 
+            
     @staticmethod
     def delete_Campeao(id):
         try:

@@ -7,6 +7,7 @@ class Funcao(db.Model):
     desc = db.Column(db.String(255), nullable=True)
 
     classes = db.relationship('Classe', back_populates='funcao', lazy=True)
+    
     def __repr__(self):
         return f"<Funcao {self.nome}>"
 
