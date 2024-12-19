@@ -1,12 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ver tudo</title>
+    <title>Ver Campeões</title>
 </head>
+
 <body>
-    <h1>ver tudo</h1>
-{{ campeao }}
+    <h1>Lista de Campeões</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Dificuldade</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for campeao in campeoes %}
+            <tr>
+                <td>{{ campeao.id_campeao }}</td>
+                <td>{{ campeao.nome }}</td>
+            </tr>
+            {% endfor %}
+            {% if not campeoes %}
+            <p>Nenhum campeão encontrado.</p>
+            {% endif %}
+
+        </tbody>
+    </table>
 </body>
+
 </html>

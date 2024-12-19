@@ -8,19 +8,30 @@ from repository.campeaoRepository import CampeaoRepository
 campeoes_repository = CampeaoRepository()
 
 campeoesController = Blueprint("campeao", __name__)
+@campeoesController.route('/')
+def index():
+    return render_template("index.html")
 
-@campeoesController.route('/ver-campeoes')
-def ver_campeao():
-    campeao= CampeaoRepository.get_all_campeoes()
-    return render_template('get_id_campeao.html', campeao=campeao)
+@campeoesController.route('/ver-campeoes', methods=['GET'])
+def ver_campeoes():
+    print("controllert")
+    campeoes = campeoes_repository.get_all_campeoes()
+    print('indo pro rendertemplate')
+    return render_template('get_all_campeao.html', campeoes=campeoes)
 
-@campeoesController.route('/add_campeao')
+@campeoesController.route('/get_id/<int:id_campeao>', methods=['GET'])
+def ver_id(id_campeao):
+    campeao = campeoes_repository.get_campeao_by_id(id_campeao)
+    return render_template("get_id_campeao.html", campeao=campeao)
+
+
+@campeoesController.route('/add_campeao',methods=['POST', 'GET'])
 def add_campeao():
     if request.method == 'POST':
         nome = request.form.get('nome')
         dificuldade = request.form.get('dificuldade')
         campeoes_repository.create_campeao(nome,dificuldade) #chama a função do repository que 
-        return redirect(url_for('campeoesController.ver_todos'))
+        return redirect(url_for('campeao.ver_campeoes'))
     return render_template('add_campeao.html')
 
     

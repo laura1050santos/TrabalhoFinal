@@ -5,6 +5,8 @@ class CampeaoRepository:
         self.campeaoDAO = CampeaoDAO()
 
     def get_all_campeoes(self):
+        print("passou pelo repository")
+
         return self.campeaoDAO.get_all_campeoes()#pega a função do DAO
     
     def get_campeao_by_id(self, id_campeao):

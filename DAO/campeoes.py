@@ -13,6 +13,7 @@ class CampeaoDAO:
     @staticmethod
     def add_Campeao(nome, dificuldade):#funcao, classe, regiao
         try:
+            print('chegou no DAO')
             campeao= Campeao(nome=nome, dificuldade=dificuldade,)#, funcao=funcao,classe=classe,regiao=regiao
             db.session.add(campeao)
             db.session.commit()
