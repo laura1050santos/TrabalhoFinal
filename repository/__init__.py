@@ -1,1 +1,1 @@
-from campeaoRepository import *
+from .campeaoRepository import *

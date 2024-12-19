@@ -1,1 +1,1 @@
-from campeoes import *
+from .campeoes import *
