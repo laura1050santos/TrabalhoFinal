@@ -35,3 +35,12 @@ def add_campeao():
     return render_template('add_campeao.html')
 
     
+@campeoesController.route('/update_campeao/<int:id_campeao>',methods=['POST','PUT', 'GET'])
+def update_campeao(id_campeao):
+    if request.method == 'PUT':
+        nome = request.form.get('nome')
+        dificuldade = request.form.get('dificuldade')
+        campeoes_repository.update_campeao(id_campeao,nome,dificuldade) #chama a função do repository que 
+        return redirect(url_for('campeao.update_campeoes'))
+    return render_template('update_campeao.html')
+

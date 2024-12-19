@@ -17,7 +17,7 @@ class CampeaoRepository:
         return self.campeaoDAO.add_Campeao(nome, dificuldade  )  
         #funcao, classe, regiao   
     def update_campeao(self, id_campeao, nome, dificuldade):
-        return self.campeaoDAO.update_Campeao(id_campeao,nome, dificuldade)
+        return self.campeaoDAO.update_Campeao(id_campeao, nome, dificuldade)
     #classe, funcao
 
     def delete_user(self, id_campeao):
